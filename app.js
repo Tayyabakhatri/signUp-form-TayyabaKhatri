@@ -12,6 +12,7 @@ btn.addEventListener('click', function () {
     var phoneNumber = document.getElementById("phoneNumber");
     var password = document.getElementById("password");
     var emailAddress = document.getElementById("emailAddress");
+    console.log(firstName.value,lastName.value,birthDay.value,phoneNumber.value,password.value,emailAddress.value)
 
     if (!firstName.value || !lastName.value || !birthDay.value || !phoneNumber.value || !password.value || !emailAddress.value) {
         alert("Please fill in all fields.");
@@ -29,13 +30,7 @@ btn.addEventListener('click', function () {
 
     users.push(userobj);
     localStorage.setItem('usersData', JSON.stringify(users));
-    //getting forms by id
-    var signUp = document.getElementById("signUpForm");
-    var login = document.getElementById("loginPage");
-    //managing display
-    signUp.style.display = "none";
-    login.style.display = "block";
-
+    window.location.href = "login.html"
     firstName.value = "";
     emailAddress.value = "";
     phoneNumber.value = "";
