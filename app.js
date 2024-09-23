@@ -1,49 +1,48 @@
 
 
-var firstName = document.getElementById("firstName");
-var lastName = document.getElementById("lastName");
-var birthDay = document.getElementById("birthdayDate");
-var phoneNumber = document.getElementById("phoneNumber");
-var passward= document.getElementById("passward")
-var btn = document.getElementById("button")
-var emailAddress = document.getElementById("emailAddress");
 
-document.getElementById("button").addEventListener('click', function() {
-    console.log(firstName.value, lastName.value, birthDay.value, phoneNumber.value, emailAddress.value);
+var btn = document.getElementById("button");
+var users = [];
 
-    //is method men ham specific keys se user ka data save kerwa skty hen but ye bhi replace kerdeta he .is liye array bnaingy
-    // var num=phoneNumber.value
-    // var email=emailAddress.value
-    // localStorage.setItem('email',JSON.stringify({num,email}))
-    //
+
+btn.addEventListener('click', function () {
+    var firstName = document.getElementById("firstName");
+    var lastName = document.getElementById("lastName");
+    var birthDay = document.getElementById("birthdayDate");
+    var phoneNumber = document.getElementById("phoneNumber");
+    var password = document.getElementById("password");
+    var emailAddress = document.getElementById("emailAddress");
+
+    if (!firstName.value || !lastName.value || !birthDay.value || !phoneNumber.value || !password.value || !emailAddress.value) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
     var userobj = {
-        name:firstName.value,
-        lastName: lastName.value,  // Fixed typo here
+        name: firstName.value,
+        lastName: lastName.value,
         birthday: birthDay.value,
         phoneNumber: phoneNumber.value,
         emailAddress: emailAddress.value,
-        passward:passward.value
+        password: password.value
     };
-    // Retrieve existing users or initialize an empty array
-    var users= JSON.parse(localStorage.getItem('users'))||[]
-    // Add new user data to the array
-    users.push(userobj)
-    // Save the updated array back to local storage
-    localStorage.setItem('users', JSON.stringify(users));
-   var login= document.getElementById("loginPage")
-   login.style.display="block"
-   var signUp=document.getElementById("signUpForm")
-   signUp.style.display="none"
-   btn.disabled=true
-   firstName.value="";
-   emailAddress.value="";
-   phoneNumber.value="";
-   birthDay.value="";
-   lastName.value="";
-   passward.value=""
+
+    users.push(userobj);
+    localStorage.setItem('usersData', JSON.stringify(users));
+    //getting forms by id
+    var signUp = document.getElementById("signUpForm");
+    var login = document.getElementById("loginPage");
+    //managing display
+    signUp.style.display = "none";
+    login.style.display = "block";
+
+    firstName.value = "";
+    emailAddress.value = "";
+    phoneNumber.value = "";
+    birthDay.value = "";
+    lastName.value = "";
+    password.value = "";
 });
-var allUsers = JSON.parse(localStorage.getItem('users'))
-console.log(allUsers)
-btn.disabled=false
+
 
 
