@@ -38,7 +38,7 @@ btn.addEventListener('click', function () {
 
 });
 var login = document.getElementById("login")
-var myfunc=function(){
+login.addEventListener('click',function(){
     var users = JSON.parse(localStorage.getItem("usersData")) 
     var loginEmail = document.getElementById("form3Example3")
     var loginPass = document.getElementById("form3Example4")
@@ -49,6 +49,8 @@ var myfunc=function(){
     }else{
 alert("error")
     }
-}
+})
+    
+
 
 
