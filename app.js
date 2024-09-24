@@ -1,6 +1,3 @@
-
-
-
 var btn = document.getElementById("button");
 var users = [];
 
