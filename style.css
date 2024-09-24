@@ -15,15 +15,22 @@ height: 100%;
 }
 }
 /* login form css finish */
-
-/* .outer-div{
-    background-color: #667bc6;
+body{
+    background-image: url(images/71+17bVYHxL._AC_UF1000\,1000_QL80_.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
-.card{
-    background-color: #ffb4c2da;
-}
-#button{
-    background-color: #fdffd2;
-    color: black;
+/*sign in form*/
+#card{
+    background-color: #ebe6e394;
     border: none;
-} */
+}
+#phoneNum,#emailAddress,#password,#birthdayDate,#lastName,#firstName,#form3Example3,#form3Example4{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.678);
+}
+#image{
+    width: 200px;
+    
+}
